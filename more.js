@@ -30,7 +30,7 @@ class More extends React.Component {
 
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
     }
 
     _goBack() {

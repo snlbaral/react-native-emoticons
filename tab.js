@@ -39,7 +39,7 @@ class TabBar extends React.Component {
             },100)
     }
 
-    componentWillUpdate(){
+    UNSAFE_componentWillUpdate(){
 
     }
 
@@ -57,7 +57,7 @@ class TabBar extends React.Component {
         this.props.onPlusPress();
     }
 
-    componentWillReceiveProps() {
+    UNSAFE_componentWillReceiveProps() {
     }
 
     render() {

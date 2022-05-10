@@ -27,7 +27,7 @@ class Webview extends React.Component {
 
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
     }
 
     _onBackPress() {

@@ -47,7 +47,7 @@ class TabBarDot extends React.Component {
         this.props.goToPage(i);
     }
 
-    componentWillReceiveProps(){
+    UNSAFE_componentWillReceiveProps(){
     }
 
     componentDidUpdate(){
