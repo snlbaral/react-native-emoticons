@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 0,
         left:0,
+        zIndex: 9999,
     },
     emoji: {
         textAlign: 'center',

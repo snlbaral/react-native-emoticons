@@ -10,7 +10,6 @@ import {
     Image,
     ScrollView,
     TouchableHighlight,
-    AsyncStorage,
     Platform
 } from 'react-native';
 import styles from './style';
@@ -25,6 +24,7 @@ import splitter from './grapheme-splitter';
 import WebViewPage from './webView';
 import PropTypes from 'prop-types';
 import ViewPropTypes from './viewproptypes';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const {height, width} = Dimensions.get('window');
 require('string.fromcodepoint');
@@ -81,7 +81,7 @@ class Emoticons extends React.Component {
         });
     }
 
-    componentWillMount() {
+    UNSAFE_componentWillMount() {
         if (this.props.showPlusBar) {
             this.setState({groupIndex: this.state.groupIndex++});
             this.setState({currentMainTab: ++this.state.currentMainTab});
@@ -99,14 +99,16 @@ class Emoticons extends React.Component {
             this.state.position,
             {
                 duration: 300,
-                toValue: this.props.show ? 0 : -300
+                toValue: this.props.show ? 0 : -300,
+                useNativeDriver: false
             }
         ).start();
         Animated.timing(
             this.state.wvPosition,
             {
                 duration: 300,
-                toValue: this.state.showWV ? 0 : -height
+                toValue: this.state.showWV ? 0 : -height,
+                useNativeDriver: false
             }
         ).start();
     }
